@@ -7,7 +7,7 @@ plugins {
 kotlin {
 
     android {
-        namespace = "com.example.feature.game.api"
+        namespace = "com.example.feature.home.impl"
         compileSdk = libs.versions.android.compileSdk.get().toInt()
         minSdk = libs.versions.android.minSdk.get().toInt()
     }

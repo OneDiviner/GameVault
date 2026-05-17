@@ -35,4 +35,12 @@ plugins {
 include(":androidApp")
 include(":desktopApp")
 include(":shared")
-include("feature:game:api")
+
+include(":feature:game:api")
+include(":feature:game:impl")
+include(":feature:home:api")
+include(":feature:home:impl")
+
+include(":core:database")
+include(":core:network")
+include(":core:resource")
