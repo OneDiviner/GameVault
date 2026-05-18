@@ -1,5 +1,6 @@
-package com.example.network
+package com.example.network.client
 
+import com.example.network.client.Secrets
 import io.ktor.client.HttpClient
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
 import io.ktor.client.plugins.defaultRequest

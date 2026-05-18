@@ -17,6 +17,10 @@ dependencies {
     implementation(libs.androidx.activity.compose)
     implementation(libs.compose.foundation)
 
+    implementation(project.dependencies.platform(libs.koin.bom))
+    implementation(libs.koin.core)
+    implementation(libs.koin.android)
+
     implementation(libs.compose.uiToolingPreview)
     debugImplementation(libs.compose.uiTooling)
 }
