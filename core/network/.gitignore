@@ -1,2 +1,2 @@
 /build
-src/commonMain/kotlin/com/example/network/SecretKey.kt
+src/commonMain/kotlin/com/example/network/client/SecretKey.kt

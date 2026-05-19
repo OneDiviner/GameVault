@@ -33,7 +33,7 @@ internal fun createKtorClient(): HttpClient {
                 protocol = URLProtocol.HTTPS
                 host = "api.rawg.io"
                 path("api/")
-                parameters.append("key", SecretKey.VALUE) //DANGER: Do not store key in app memory
+                parameters.append("key", Secret.VALUE) //DANGER: Do not store key in app memory
             }
         }
     }
