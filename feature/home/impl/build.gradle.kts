@@ -31,12 +31,18 @@ kotlin {
 
                 implementation(project.dependencies.platform(libs.koin.bom))
                 implementation(libs.koin.core)
+                implementation(libs.koin.compose)
+                implementation(libs.koin.compose.viewmodel)
 
                 implementation(libs.ktor.client.core)
                 implementation(libs.ktor.client.logging)
                 implementation(libs.ktor.client.content.negotiation)
                 implementation(libs.ktor.serialization.kotlinx.json)
                 implementation(libs.kotlinx.serialization.json)
+
+                implementation(libs.orbit.mvi.core)
+                implementation(libs.orbit.mvi.compose)
+                implementation(libs.orbit.mvi.viewmodel)
 
                 implementation(projects.feature.home.api)
 
@@ -46,6 +52,11 @@ kotlin {
         androidMain {
             dependencies {
                 implementation(libs.ktor.client.okhttp)
+            }
+        }
+        jvmMain {
+            dependencies {
+                implementation(libs.ktor.client.cio)
             }
         }
     }
