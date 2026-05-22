@@ -1,18 +1,12 @@
 package com.example.impl.data.model
 
+import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-internal data class GameDto(
-    val id: Int,
-    val slug: String,
-    val name: String
-)
-
-@Serializable
 internal data class GamesResponseDto(
-    val count: Int,
-    val next: String?,
-    val previous: String?,
-    val results: List<GameDto>
+    @SerialName("count") val count: Int,
+    @SerialName("next") val next: String?,
+    @SerialName("previous") val previous: String?,
+    @SerialName("results") val results: List<GameDto>
 )

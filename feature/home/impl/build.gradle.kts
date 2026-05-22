@@ -39,19 +39,28 @@ kotlin {
                 implementation(libs.ktor.client.content.negotiation)
                 implementation(libs.ktor.serialization.kotlinx.json)
                 implementation(libs.kotlinx.serialization.json)
+                implementation(libs.kotlinx.collections.immutable)
 
                 implementation(libs.orbit.mvi.core)
                 implementation(libs.orbit.mvi.compose)
                 implementation(libs.orbit.mvi.viewmodel)
 
+                implementation(libs.coil.core)
+                implementation(libs.coil.compose)
+                implementation(libs.coil.network.ktor3)
+
+                implementation(libs.kache)
+
                 implementation(projects.feature.home.api)
 
                 implementation(projects.core.network)
+                implementation(projects.core.resource)
             }
         }
         androidMain {
             dependencies {
                 implementation(libs.ktor.client.okhttp)
+                implementation(libs.coil.network.okhttp)
             }
         }
         jvmMain {

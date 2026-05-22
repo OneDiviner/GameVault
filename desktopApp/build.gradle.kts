@@ -27,5 +27,12 @@ compose.desktop {
             packageName = "com.example.gamevault"
             packageVersion = "1.0.0"
         }
+
+        /*jvmArgs(
+            "-Dhttp.proxyHost=127.0.0.1",
+            "-Dhttp.proxyPort=12334",
+            "-Dhttps.proxyHost=127.0.0.1",
+            "-Dhttps.proxyPort=12334"
+        )*/
     }
 }

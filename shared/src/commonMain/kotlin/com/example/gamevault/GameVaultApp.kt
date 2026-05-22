@@ -21,7 +21,7 @@ fun GameVaultApp() {
           modifier = Modifier
               .fillMaxSize()
               .background(color = MaterialTheme.colorScheme.background)
-        ) { _ ->
+        ) { paddingValues ->
             /*NavDisplay(
                 backStack = backStack,
                 entryProvider = entryProvider {
@@ -30,7 +30,7 @@ fun GameVaultApp() {
                     }
                 }
             )*/
-            HomeFeature()
+            HomeFeature(paddingValues)
 
         }
     }

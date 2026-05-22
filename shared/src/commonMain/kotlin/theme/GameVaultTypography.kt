@@ -18,11 +18,101 @@ object GameVaultTypography {
 
     val Typography: Typography
         @Composable get() = Typography(
-            headlineLarge = TextStyle(
+
+            displayLarge = TextStyle(
+                fontFamily = OutfitFontFamily,
+                fontSize = 42.sp,
+                letterSpacing = 0.sp,
+                fontWeight = FontWeight.SemiBold
+            ),
+            displayMedium = TextStyle(
+                fontFamily = OutfitFontFamily,
+                fontSize = 35.sp,
+                letterSpacing = 0.sp,
+                fontWeight = FontWeight.SemiBold
+            ),
+            displaySmall = TextStyle(
+                fontFamily = OutfitFontFamily,
+                fontSize = 29.sp,
+                letterSpacing = 0.sp,
+                fontWeight = FontWeight.SemiBold
+            ),
+
+            titleLarge = TextStyle(
+                fontFamily = OutfitFontFamily,
+                fontSize = 24.sp,
+                letterSpacing = 0.sp,
+                fontWeight = FontWeight.SemiBold
+            ),
+            titleMedium = TextStyle(
                 fontFamily = OutfitFontFamily,
                 fontSize = 20.sp,
                 letterSpacing = 0.sp,
-                fontWeight = FontWeight.Bold
+                fontWeight = FontWeight.SemiBold
+            ),
+            titleSmall = TextStyle(
+                fontFamily = OutfitFontFamily,
+                fontSize = 17.sp,
+                letterSpacing = 0.sp,
+                fontWeight = FontWeight.SemiBold
+            ),
+
+            headlineLarge = TextStyle(
+                fontFamily = OutfitFontFamily,
+                fontSize = 14.sp,
+                letterSpacing = 0.sp,
+                fontWeight = FontWeight.SemiBold
+            ),
+            headlineMedium = TextStyle(
+                fontFamily = OutfitFontFamily,
+                fontSize = 12.sp,
+                letterSpacing = 0.sp,
+                fontWeight = FontWeight.SemiBold
+            ),
+            headlineSmall = TextStyle(
+                fontFamily = OutfitFontFamily,
+                fontSize = 10.sp,
+                letterSpacing = 0.sp,
+                fontWeight = FontWeight.SemiBold
+            ),
+
+
+            bodyLarge = TextStyle(
+                fontFamily = OutfitFontFamily,
+                fontSize = 14.sp,
+                letterSpacing = 0.sp,
+                fontWeight = FontWeight.Light
+            ),
+            bodyMedium = TextStyle(
+                fontFamily = OutfitFontFamily,
+                fontSize = 12.sp,
+                letterSpacing = 0.sp,
+                fontWeight = FontWeight.Light
+            ),
+            bodySmall = TextStyle(
+                fontFamily = OutfitFontFamily,
+                fontSize = 10.sp,
+                letterSpacing = 0.sp,
+                fontWeight = FontWeight.Light
+            ),
+
+            labelLarge = TextStyle(
+                fontFamily = OutfitFontFamily,
+                fontSize = 14.sp,
+                letterSpacing = 0.sp,
+                fontWeight = FontWeight.Light
+            ),
+            labelMedium = TextStyle(
+                fontFamily = OutfitFontFamily,
+                fontSize = 12.sp,
+                letterSpacing = 0.sp,
+                fontWeight = FontWeight.Light
+            ),
+            labelSmall = TextStyle(
+                fontFamily = OutfitFontFamily,
+                fontSize = 10.sp,
+                letterSpacing = 0.sp,
+                fontWeight = FontWeight.Light
             )
         )
 }

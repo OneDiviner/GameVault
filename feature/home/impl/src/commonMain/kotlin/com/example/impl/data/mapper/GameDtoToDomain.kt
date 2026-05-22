@@ -5,6 +5,10 @@ import com.example.impl.domain.model.Game
 
 internal fun GameDto.toDomain() = Game(
     id = id,
-    slug = slug,
     name = name,
+    backgroundImage = backgroundImage,
+    metacritic = metacritic.toString(),
+    platformsGroup = platforms
+        ?.map { it.platform.id.toPlatformGroup() }
+        ?.distinct() ?: emptyList()
 )
