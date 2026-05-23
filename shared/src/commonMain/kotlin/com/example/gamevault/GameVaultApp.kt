@@ -2,25 +2,22 @@ package com.example.gamevault
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.navigation3.runtime.entryProvider
-import androidx.navigation3.runtime.rememberNavBackStack
-import androidx.navigation3.ui.NavDisplay
-import com.example.api.HomeRoute
+import com.example.designsystem.GameVaultTheme
 import com.example.impl.presentation.HomeFeature
 
 @Composable
 fun GameVaultApp() {
-    MaterialTheme {
+
+    GameVaultTheme {
         //val backStack = rememberNavBackStack(HomeRoute)
 
         Scaffold(
-          modifier = Modifier
-              .fillMaxSize()
-              .background(color = MaterialTheme.colorScheme.background)
+            modifier = Modifier
+                .fillMaxSize()
+                .background(color = GameVaultTheme.colors.onBackground)
         ) { paddingValues ->
             /*NavDisplay(
                 backStack = backStack,

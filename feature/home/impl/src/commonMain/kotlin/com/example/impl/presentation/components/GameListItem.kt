@@ -24,6 +24,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
+import com.example.designsystem.GameVaultTheme
 import com.example.impl.domain.model.Game
 import com.example.impl.domain.model.GameScreenshots
 import com.example.impl.domain.usecase.GetGameScreenshotsUseCase
@@ -66,7 +67,7 @@ internal fun GameListItem(
         onClick = {
 
         },
-        shape = RoundedCornerShape(16.dp),
+        shape = RoundedCornerShape(GameVaultTheme.shapes.medium),
         colors = CardDefaults.cardColors(
             containerColor = Color.Transparent
         ),
@@ -82,7 +83,7 @@ internal fun GameListItem(
             if (page == 0) {
                 GameListItemImage(
                     modifier = Modifier
-                        .padding(top = 8.dp, start = 8.dp, end = 8.dp),
+                        .padding(top = 8.dp, start = 8.dp, end = 8.dp), //TODO: To spacing
                     backgroundImage = game.backgroundImage,
                     metacriticRating = game.metacritic
                 )
@@ -90,7 +91,7 @@ internal fun GameListItem(
                 if (screenshots.screenshots.isNotEmpty()) {
                     GameListItemImage(
                         modifier = Modifier
-                            .padding(top = 8.dp, start = 8.dp, end = 8.dp),
+                            .padding(top = 8.dp, start = 8.dp, end = 8.dp), //TODO: To spacing
                         backgroundImage = screenshots.screenshots[page-1].image,
                         metacriticRating = game.metacritic
                     )
@@ -99,29 +100,30 @@ internal fun GameListItem(
         }
         Column(
             modifier = Modifier
-                .padding(8.dp)
+                .padding(8.dp) //TODO: To spacing
                 .fillMaxWidth(),
-            verticalArrangement = Arrangement.spacedBy(4.dp)
+            verticalArrangement = Arrangement.spacedBy(4.dp) //TODO: To spacing
         ) {
             Text(
                 modifier = Modifier,
                 text = game.name,
-                style = MaterialTheme.typography.titleMedium,
-                color = MaterialTheme.colorScheme.onBackground,
+                style = MaterialTheme.typography.titleMedium, //TODO: To GameVaultTheme
+                color = MaterialTheme.colorScheme.onBackground, //TODO: To GameVaultTheme
                 overflow = TextOverflow.Ellipsis,
                 maxLines = 1
             )
             Row(
                 modifier = Modifier
                     .fillMaxWidth(),
-                horizontalArrangement = Arrangement.spacedBy(4.dp)
+                horizontalArrangement = Arrangement.spacedBy(4.dp) //TODO: To spacing
             ) {
                 game.platformsGroup.forEach { platform ->
                     Icon(
-                        modifier = Modifier.size(16.dp),
+                        modifier = Modifier.size(16.dp), //TODO: To spacing
                         painter = painterResource(platform.id.toIcon()),
                         contentDescription = null,
-                        tint = MaterialTheme.colorScheme.onBackground.copy(0.7f)
+                        tint = MaterialTheme.colorScheme.onBackground.copy(0.7f) //TODO: To GameVaultTheme
+                                                                                            //FIXME: Check about copy
                     )
                 }
             }

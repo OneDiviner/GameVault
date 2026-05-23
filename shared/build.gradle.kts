@@ -56,6 +56,7 @@ kotlin {
             implementation(projects.core.network)
             implementation(projects.core.database)
             implementation(projects.core.resource)
+            api(projects.core.designsystem)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)

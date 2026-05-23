@@ -11,6 +11,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.example.designsystem.GameVaultTheme
 import com.example.impl.domain.model.Game
 
 @Composable
@@ -22,10 +23,10 @@ internal fun GamesList(
     LazyVerticalGrid(
         modifier = modifier
             .fillMaxSize()
-            .padding(8.dp),
+            .padding(GameVaultTheme.spacings.small),
         columns = GridCells.Fixed(2),
-        verticalArrangement = Arrangement.spacedBy(8.dp),
-        horizontalArrangement = Arrangement.spacedBy(8.dp)
+        verticalArrangement = Arrangement.spacedBy(GameVaultTheme.spacings.small),
+        horizontalArrangement = Arrangement.spacedBy(GameVaultTheme.spacings.small)
     ) {
         items(
             gamesList,
