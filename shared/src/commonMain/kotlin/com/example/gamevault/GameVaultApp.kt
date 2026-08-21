@@ -5,8 +5,9 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import com.example.designsystem.Colors
 import com.example.designsystem.GameVaultTheme
-import com.example.impl.presentation.HomeFeature
+import com.example.impl.presentation.home.HomeFeature
 
 @Composable
 fun GameVaultApp() {
@@ -17,7 +18,7 @@ fun GameVaultApp() {
         Scaffold(
             modifier = Modifier
                 .fillMaxSize()
-                .background(color = GameVaultTheme.colors.onBackground)
+                .background(color = Colors.background)
         ) { paddingValues ->
             /*NavDisplay(
                 backStack = backStack,

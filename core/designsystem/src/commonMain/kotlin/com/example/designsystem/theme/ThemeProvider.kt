@@ -1,28 +1,33 @@
 package com.example.designsystem.theme
 
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.compositionLocalOf
 import androidx.compose.runtime.staticCompositionLocalOf
+import androidx.compose.ui.text.font.FontFamily
 import com.example.designsystem.resources.GameVaultIcons
 import com.example.designsystem.shapes.GameVaultShapes
 import com.example.designsystem.spacings.GameVaultSpacings
 import com.example.designsystem.theme.colors.GameVaultColors
+import com.example.designsystem.theme.colors.colors.darkGameVaultColors
 import com.example.designsystem.theme.typography.GameVaultTypography
+import org.jetbrains.compose.resources.Font
 
-internal val LocalGameVaultColors = staticCompositionLocalOf<GameVaultColors> {
-    error("GameVaultColors not initialized!")
+internal val LocalGameVaultColors = compositionLocalOf<GameVaultColors> {
+    darkGameVaultColors
 }
 
-internal val LocalGameVaultTypography = staticCompositionLocalOf<GameVaultTypography> {
-    error("GameVaultTypography not initialized!")
+internal val LocalGameVaultTypography = compositionLocalOf<GameVaultTypography> {
+    GameVaultTypography()
 }
 
 internal val LocalGameVaultIcons = staticCompositionLocalOf<GameVaultIcons> {
-    error("GameVaultIcons not initialized!")
+    GameVaultIcons()
 }
 
 internal val LocalGameVaultShapes = staticCompositionLocalOf<GameVaultShapes> {
-    error("GameVaultShapes not initialized!")
+    GameVaultShapes()
 }
 
 internal val LocalGameVaultSpacings = staticCompositionLocalOf<GameVaultSpacings> {
-    error("GameVaultSpacings not initialized!")
+    GameVaultSpacings()
 }

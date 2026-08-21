@@ -26,7 +26,20 @@ import gamevault.core.designsystem.generated.resources.Res
 import gamevault.core.designsystem.generated.resources.outfit_font
 import org.jetbrains.compose.resources.Font
 
-object GameVaultTheme {
+val Colors: GameVaultColors
+    @Composable @ReadOnlyComposable get() = GameVaultTheme.colors
+val Typography: GameVaultTypography
+    @Composable @ReadOnlyComposable get() = GameVaultTheme.typography
+val Icons: GameVaultIcons
+    @Composable @ReadOnlyComposable get() = GameVaultTheme.icons
+
+val Shapes: GameVaultShapes
+    @Composable @ReadOnlyComposable get() = GameVaultTheme.shapes
+
+val Spacings: GameVaultSpacings
+    @Composable @ReadOnlyComposable get() = GameVaultTheme.spacings
+
+internal object GameVaultTheme {
     val colors: GameVaultColors
         @Composable
         @ReadOnlyComposable

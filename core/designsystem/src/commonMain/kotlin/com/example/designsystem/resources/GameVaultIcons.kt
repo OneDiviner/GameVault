@@ -15,13 +15,13 @@ import org.jetbrains.compose.resources.DrawableResource
 
 @Immutable
 class GameVaultIcons internal constructor(
-    android: DrawableResource = Res.drawable.android_icon,
-    apple: DrawableResource = Res.drawable.apple_icon,
-    gamepad: DrawableResource = Res.drawable.gamepad_icon,
-    logo: DrawableResource = Res.drawable.logo_icon,
-    nintendoSwitch: DrawableResource = Res.drawable.nintendo_switch_icon,
-    playStation: DrawableResource = Res.drawable.play_station_icon,
-    search: DrawableResource = Res.drawable.search_icon,
-    windows: DrawableResource = Res.drawable.windows_icon,
-    xbox: DrawableResource = Res.drawable.xbox_icon,
+    val android: DrawableResource = Res.drawable.android_icon,
+    val apple: DrawableResource = Res.drawable.apple_icon,
+    val gamepad: DrawableResource = Res.drawable.gamepad_icon,
+    val logo: DrawableResource = Res.drawable.logo_icon,
+    val nintendoSwitch: DrawableResource = Res.drawable.nintendo_switch_icon,
+    val playStation: DrawableResource = Res.drawable.play_station_icon,
+    val search: DrawableResource = Res.drawable.search_icon,
+    val windows: DrawableResource = Res.drawable.windows_icon,
+    val xbox: DrawableResource = Res.drawable.xbox_icon,
 )

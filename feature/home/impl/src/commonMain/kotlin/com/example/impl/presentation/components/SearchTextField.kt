@@ -23,30 +23,43 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.focus.onFocusChanged
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.text.input.ImeAction
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.impl.presentation.contract.HomeIntent
-import gamevault.core.resource.generated.resources.Res
-import gamevault.core.resource.generated.resources.gamepad_icon
-import gamevault.core.resource.generated.resources.search_icon
+import com.example.designsystem.Colors
+import com.example.designsystem.Icons
+import com.example.designsystem.Spacings
+import com.example.designsystem.Typography
+import com.example.designsystem.Shapes
+import gamevault.core.designsystem.generated.resources.Res
+import gamevault.core.designsystem.generated.resources.search_icon
 import org.jetbrains.compose.resources.painterResource
 
 @Composable
 internal fun SearchTextField(
     modifier: Modifier = Modifier,
+    color: Color = Colors.surface,
+    textColor: Color = Colors.onSurface,
+    placeholder: String? = null,
+    leadIcon: Painter = painterResource(Res.drawable.search_icon),
+    iconTint: Color = Colors.onSurface,
+    shape: Shape = RoundedCornerShape(Spacings.extraLarge),
     onSearchButtonCLick: (String) -> Unit
 ) {
 
-    var isFocused by remember { mutableStateOf(false) }
     val focusManager = LocalFocusManager.current
+
+    var isFocused by remember { mutableStateOf(false) }
     var searchQueryValue by remember { mutableStateOf("") }
 
     BasicTextField(
         modifier = modifier
-            .fillMaxWidth()
-            .clip(RoundedCornerShape(24.dp))
+            .clip(shape)
             .onFocusChanged {
                 isFocused = it.isFocused
                 if (!it.isFocused) {
@@ -66,25 +79,24 @@ internal fun SearchTextField(
                 onSearchButtonCLick(searchQueryValue)
             }
         ),
-        cursorBrush = SolidColor(MaterialTheme.colorScheme.primary),
-        textStyle = MaterialTheme.typography.labelLarge.copy(color = MaterialTheme.colorScheme.onBackground), //FIXME: This should not be this
+        cursorBrush = SolidColor(Colors.onSurface),
+        textStyle = Typography.labelLarge.copy(color = Colors.onBackground),
         decorationBox = { innerTextField ->
             Row(
                 modifier = Modifier
-                    .background(
-                        color = MaterialTheme.colorScheme.onBackground.copy(0.15f),
-                        shape = RoundedCornerShape(24.dp)
-                    )
-                    .fillMaxWidth()
-                    .padding(horizontal = 16.dp, vertical = 8.dp),
+                    .background(color = color)
+                    .padding(
+                        horizontal = Spacings.medium,
+                        vertical = Spacings.small
+                    ),
                 verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.spacedBy(8.dp)
+                horizontalArrangement = Arrangement.spacedBy(Spacings.small)
             ) {
                 Icon(
-                    painter = painterResource(Res.drawable.search_icon),
+                    painter = leadIcon,
                     contentDescription = "search_icon",
                     modifier = Modifier.size(24.dp),
-                    tint = MaterialTheme.colorScheme.onBackground.copy(0.85f)
+                    tint = iconTint
                 )
                 Box(
                     modifier = Modifier.weight(1f),
@@ -94,13 +106,23 @@ internal fun SearchTextField(
                     if (searchQueryValue.isEmpty()) {
                         Text(
                             modifier = Modifier,
-                            text = "Search...", //TODO: To text resources
-                            color = MaterialTheme.colorScheme.onBackground.copy(0.85f), //TODO: Check it
-                            style = MaterialTheme.typography.labelLarge
+                            text = placeholder ?: "", //TODO: To text resources
+                            color = Colors.onSurface.copy(0.85f), //TODO: Check it
+                            style = Typography.labelLarge
                         )
                     }
                 }
             }
         }
+    )
+}
+
+@Composable
+@Preview
+private fun SearchTextFieldPreview() {
+    SearchTextField(
+        color = Colors.surface,
+        placeholder = "Search...",
+        onSearchButtonCLick = {}
     )
 }

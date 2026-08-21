@@ -1,15 +1,19 @@
 package com.example.designsystem.theme.typography
 
-import androidx.compose.material3.Typography
+
+import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Immutable
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
+import gamevault.core.designsystem.generated.resources.Res
+import gamevault.core.designsystem.generated.resources.outfit_font
+import org.jetbrains.compose.resources.Font
 
 @Immutable
 class GameVaultTypography internal constructor(
-    fontFamily: FontFamily
+    fontFamily: FontFamily = FontFamily.Default
 ) {
     val displayLarge = TextStyle(
         fontFamily = fontFamily,
@@ -46,7 +50,8 @@ class GameVaultTypography internal constructor(
         fontFamily = fontFamily,
         fontSize = 17.sp,
         letterSpacing = 0.sp,
-        fontWeight = FontWeight.SemiBold
+        fontWeight = FontWeight.SemiBold,
+        lineHeight = 15.sp
     )
 
     val headlineLarge = TextStyle(

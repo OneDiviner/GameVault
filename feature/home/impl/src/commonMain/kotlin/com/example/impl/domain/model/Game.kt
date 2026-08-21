@@ -5,6 +5,5 @@ internal class Game(
     val name: String,
     val backgroundImage: String,
     val metacritic: String,
-    val platformsGroup: List<PlatformGroup>
-    //val platforms: List<Platform>,
+    val platformsGroup: List<PlatformGroup> //Unstable
 )
